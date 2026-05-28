@@ -1,0 +1,103 @@
+version: forge.recipe.v1
+project:
+  name: messy-farmer-registry
+  reviewers:
+    - id: demo-reviewer
+      name: Demo Reviewer
+      role: data_steward
+source:
+  id: source.main
+  type: file
+  path: data/farmers-messy.csv
+  format: csv
+  hash:
+    algorithm: sha256
+    value: ae9e43718ef9a3930e193dc530bd7351b69b6602a1bd1b3f6534afbddabe3d23
+  parser:
+    family: csv
+    version: "1"
+profile_bundle:
+  id: publicschema-demo
+  path: profiles/publicschema-demo.bundle.json
+  hash:
+    algorithm: sha256
+    value: 47b2898c534af25ccb9f0fb41e93a738c6c32041e82ebf3007802736f54cb16a
+fields:
+  farmer_id:
+    source_name: Farmer ID
+    role: identifier
+    sensitivity: low
+    type_hint: string
+  full_name:
+    source_name: Full Name
+    role: attribute
+    sensitivity: high
+    type_hint: string
+  district:
+    source_name: District
+    role: attribute
+    sensitivity: low
+    type_hint: string
+    code_list: district_codes
+  registration_status:
+    source_name: Registration Status
+    role: status
+    sensitivity: low
+    type_hint: string
+  registration_date:
+    source_name: Registration Date
+    role: date
+    sensitivity: low
+    type_hint: date
+semantic_alignments:
+  - source_field: farmer_id
+    target: publicschema:farmer.identifier
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: full_name
+    target: publicschema:person.name
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: district
+    target: publicschema:farmer.location.district
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: registration_status
+    target: publicschema:registration.status
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: registration_date
+    target: publicschema:registration.date
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+value_crosswalks:
+  district_codes:
+    source_field: district
+    target_code_list: publicschema:district
+    status: accepted
+mappings:
+  engine: crosswalk
+  file: mappings/crosswalk.mapping.yaml
+validation:
+  required_targets:
+    - publicschema:farmer.identifier
+    - publicschema:farmer.location.district
+candidates:
+  relay:
+    status: draft
+  manifest:
+    status: draft
+  witness:
+    status: draft
+review:
+  status: draft

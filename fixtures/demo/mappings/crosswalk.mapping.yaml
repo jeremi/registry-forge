@@ -1,0 +1,29 @@
+version: "0.1"
+name: demo-farmer-registry
+errors:
+  mode: collect
+x-forge:
+  rules:
+    publicschema:farmer.identifier:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:person.name:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:farmer.location.district:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:registration.status:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:registration.date:
+      quality: exact
+      reviewer: demo-reviewer
+records:
+  canonical:
+    fields:
+      farmer_identifier: "source.farmer_id"
+      person_name: "source.full_name"
+      farmer_location_district: "source.district"
+      registration_status: "source.registration_status"
+      registration_date: "source.registration_date"

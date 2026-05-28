@@ -1,0 +1,29 @@
+version: "0.1"
+name: demo-household-registry
+errors:
+  mode: collect
+x-forge:
+  rules:
+    publicschema:household.identifier:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:person.name:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:household.location.district:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:eligibility.status:
+      quality: exact
+      reviewer: demo-reviewer
+    publicschema:enrollment.date:
+      quality: exact
+      reviewer: demo-reviewer
+records:
+  canonical:
+    fields:
+      household_identifier: "source.household_id"
+      person_name: "source.head_name"
+      household_location_district: "source.district"
+      eligibility_status: "source.eligibility_status"
+      enrollment_date: "source.enrollment_date"

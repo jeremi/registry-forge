@@ -1,0 +1,32 @@
+[package]
+name = "registry-forge"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.83"
+license = "Apache-2.0"
+description = "Registry Forge: local preparation CLI for registry source data."
+publish = false
+
+[workspace]
+members = ["."]
+
+[dependencies]
+calamine = { version = "0.35" }
+clap = { version = "4.5", features = ["derive"] }
+crosswalk-core = { version = "0.1.1", path = "../cel-mapping/crates/crosswalk-core" }
+csv = { version = "1" }
+hex = { version = "0.4" }
+json-patch = { version = "4" }
+jsonschema = { version = "0.18" }
+schemars = { version = "1", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1" }
+serde_yaml = { version = "0.9" }
+sha2 = { version = "0.11" }
+tempfile = { version = "3" }
+thiserror = { version = "2" }
+zip = { version = "7", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+assert_cmd = { version = "2" }
+predicates = { version = "3" }

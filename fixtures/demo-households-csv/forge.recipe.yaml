@@ -1,0 +1,103 @@
+version: forge.recipe.v1
+project:
+  name: demo-household-registry
+  reviewers:
+    - id: demo-reviewer
+      name: Demo Reviewer
+      role: data_steward
+source:
+  id: source.main
+  type: file
+  path: data/households.csv
+  format: csv
+  hash:
+    algorithm: sha256
+    value: a1a3b747eeba398f4f261dbb757beee8c58cc6269b6b26c0b9ece0059079111d
+  parser:
+    family: csv
+    version: "1"
+profile_bundle:
+  id: publicschema-household-demo
+  path: profiles/publicschema-household.bundle.json
+  hash:
+    algorithm: sha256
+    value: 23a62790ba7a47eabeb573d078f2862aaf31cd7a9a5699e1456da34864d0e3f2
+fields:
+  household_id:
+    source_name: Household ID
+    role: identifier
+    sensitivity: low
+    type_hint: string
+  head_name:
+    source_name: Head Name
+    role: attribute
+    sensitivity: high
+    type_hint: string
+  district:
+    source_name: District
+    role: attribute
+    sensitivity: low
+    type_hint: string
+    code_list: district_codes
+  eligibility_status:
+    source_name: Eligibility Status
+    role: status
+    sensitivity: low
+    type_hint: string
+  enrollment_date:
+    source_name: Enrollment Date
+    role: date
+    sensitivity: low
+    type_hint: date
+semantic_alignments:
+  - source_field: household_id
+    target: publicschema:household.identifier
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: head_name
+    target: publicschema:person.name
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: district
+    target: publicschema:household.location.district
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: eligibility_status
+    target: publicschema:eligibility.status
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+  - source_field: enrollment_date
+    target: publicschema:enrollment.date
+    match_level: exact
+    status: accepted
+    confidence: high
+    reviewer: demo-reviewer
+value_crosswalks:
+  district_codes:
+    source_field: district
+    target_code_list: publicschema:district
+    status: accepted
+mappings:
+  engine: crosswalk
+  file: mappings/crosswalk.mapping.yaml
+validation:
+  required_targets:
+    - publicschema:household.identifier
+    - publicschema:household.location.district
+candidates:
+  relay:
+    status: draft
+  manifest:
+    status: draft
+  witness:
+    status: draft
+review:
+  status: draft

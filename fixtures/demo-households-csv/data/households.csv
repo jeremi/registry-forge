@@ -1,0 +1,5 @@
+Household ID,Head Name,District,Eligibility Status,Enrollment Date
+HH-001,Nora Example,North,ELIGIBLE,2025-01-15
+HH-002,Omar Example,South,WAITLISTED,2025-01-20
+HH-003,Priya Example,East,ELIGIBLE,2025-02-01
+HH-004,Quinn Example,West,INELIGIBLE,2025-02-11

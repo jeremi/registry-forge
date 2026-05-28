@@ -1,0 +1,30 @@
+{
+  "id": "publicschema-household-demo",
+  "terms": [
+    {
+      "id": "publicschema:household.identifier",
+      "label": "Household identifier",
+      "aliases": ["household id", "household identifier"]
+    },
+    {
+      "id": "publicschema:person.name",
+      "label": "Person name",
+      "aliases": ["head name", "full name", "name"]
+    },
+    {
+      "id": "publicschema:household.location.district",
+      "label": "District",
+      "aliases": ["district", "area"]
+    },
+    {
+      "id": "publicschema:eligibility.status",
+      "label": "Eligibility status",
+      "aliases": ["eligibility status", "status"]
+    },
+    {
+      "id": "publicschema:enrollment.date",
+      "label": "Enrollment date",
+      "aliases": ["enrollment date", "registration date", "date"]
+    }
+  ]
+}

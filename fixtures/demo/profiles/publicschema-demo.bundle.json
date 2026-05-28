@@ -1,0 +1,30 @@
+{
+  "id": "publicschema-demo",
+  "terms": [
+    {
+      "id": "publicschema:farmer.identifier",
+      "label": "Farmer identifier",
+      "aliases": ["farmer id", "farmer identifier", "registration number"]
+    },
+    {
+      "id": "publicschema:person.name",
+      "label": "Person name",
+      "aliases": ["full name", "name"]
+    },
+    {
+      "id": "publicschema:farmer.location.district",
+      "label": "District",
+      "aliases": ["district", "area"]
+    },
+    {
+      "id": "publicschema:registration.status",
+      "label": "Registration status",
+      "aliases": ["registration status", "status"]
+    },
+    {
+      "id": "publicschema:registration.date",
+      "label": "Registration date",
+      "aliases": ["registration date", "date"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+/target/
+
+# Generated Forge artifacts inside fixtures.
+reports/
+patches/
+previews/
+packages/
+
+.DS_Store

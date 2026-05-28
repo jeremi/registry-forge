@@ -1,0 +1,5 @@
+Farmer ID,Full Name,District,Registration Status,Registration Date,Notes,Notes,
+F-101,Ada Sample,North,ACTIVE,2025-01-10,verified,duplicate note,
+F-102,Boris Sample,,PENDING,2025-02-12,missing district,duplicate note,
+F-102,Celine Sample,South,ACTIVE,,duplicate id,duplicate note,unexpected extra
+F-104,Dana Sample,East,INACTIVE,2025-03-20
