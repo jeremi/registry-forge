@@ -75,18 +75,11 @@ Generated `reports/`, `patches/`, and `previews/` directories are not committed.
 
 ## Local Setup
 
-Registry Forge currently depends on Crosswalk as a sibling checkout, matching
-the local workspace layout used by the Registry Stack repositories:
+Registry Forge pins `crosswalk-core` from the public Crosswalk repository.
 
 ```sh
-cd /path/to/apps
-git clone git@github.com:PublicSchema/crosswalk.git cel-mapping
-cd registry-forge
 cargo build --workspace
 ```
-
-In this workspace, `../cel-mapping` already provides
-`crates/crosswalk-core`.
 
 ## Happy Path
 

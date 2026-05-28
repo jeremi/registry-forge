@@ -9,10 +9,6 @@ on:
 permissions:
   contents: read
 
-env:
-  CROSSWALK_REPOSITORY: PublicSchema/crosswalk
-  CROSSWALK_REF: 54e0f537830837fcd0c9efa87990987b1846931c
-
 jobs:
   rust:
     runs-on: ubuntu-latest
@@ -23,13 +19,6 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: registry-forge
-
-      - name: Checkout Crosswalk
-        uses: actions/checkout@v6
-        with:
-          repository: ${{ env.CROSSWALK_REPOSITORY }}
-          ref: ${{ env.CROSSWALK_REF }}
-          path: cel-mapping
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable

@@ -6,13 +6,7 @@ local-first, source-immutable, auditable workflow.
 
 ## Local Setup
 
-This repository currently expects the Crosswalk checkout as a sibling directory:
-
-```sh
-git clone git@github.com:PublicSchema/crosswalk.git ../cel-mapping
-```
-
-Then run:
+Run:
 
 ```sh
 cargo build --workspace

@@ -13,7 +13,7 @@ members = ["."]
 [dependencies]
 calamine = { version = "0.35" }
 clap = { version = "4.5", features = ["derive"] }
-crosswalk-core = { version = "0.1.1", path = "../cel-mapping/crates/crosswalk-core" }
+crosswalk-core = { version = "0.1.1", git = "https://github.com/PublicSchema/crosswalk.git", rev = "54e0f537830837fcd0c9efa87990987b1846931c" }
 csv = { version = "1" }
 hex = { version = "0.4" }
 json-patch = { version = "4" }

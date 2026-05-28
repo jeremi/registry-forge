@@ -458,6 +458,7 @@ checksum = "790eea4361631c5e7d22598ecd5723ff611904e3344ce8720784c93e3d83d40b"
 [[package]]
 name = "crosswalk-cel"
 version = "0.1.0"
+source = "git+https://github.com/PublicSchema/crosswalk.git?rev=54e0f537830837fcd0c9efa87990987b1846931c#54e0f537830837fcd0c9efa87990987b1846931c"
 dependencies = [
  "base64",
  "cel",
@@ -473,6 +474,7 @@ dependencies = [
 [[package]]
 name = "crosswalk-core"
 version = "0.1.1"
+source = "git+https://github.com/PublicSchema/crosswalk.git?rev=54e0f537830837fcd0c9efa87990987b1846931c#54e0f537830837fcd0c9efa87990987b1846931c"
 dependencies = [
  "base64",
  "cel",
@@ -499,6 +501,7 @@ dependencies = [
 [[package]]
 name = "crosswalk-functions"
 version = "0.1.0"
+source = "git+https://github.com/PublicSchema/crosswalk.git?rev=54e0f537830837fcd0c9efa87990987b1846931c#54e0f537830837fcd0c9efa87990987b1846931c"
 dependencies = [
  "chrono",
  "chrono-tz",
@@ -515,6 +518,7 @@ dependencies = [
 [[package]]
 name = "crosswalk-functions-cel"
 version = "0.1.0"
+source = "git+https://github.com/PublicSchema/crosswalk.git?rev=54e0f537830837fcd0c9efa87990987b1846931c#54e0f537830837fcd0c9efa87990987b1846931c"
 dependencies = [
  "base64",
  "cel",
@@ -533,6 +537,7 @@ dependencies = [
 [[package]]
 name = "crosswalk-publicschema"
 version = "0.1.0"
+source = "git+https://github.com/PublicSchema/crosswalk.git?rev=54e0f537830837fcd0c9efa87990987b1846931c#54e0f537830837fcd0c9efa87990987b1846931c"
 dependencies = [
  "crosswalk-cel",
  "crosswalk-functions",
