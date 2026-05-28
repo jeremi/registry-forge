@@ -1,5 +1,8 @@
 # Registry Forge
 
+> **Experimental:** This codebase is under active development. Its CLI,
+> recipe schema, and package layout may change before 1.0.
+
 Registry Forge is a local Rust CLI for preparing synthetic or non-real registry
 source data into a replayable preparation package.
 
@@ -11,6 +14,16 @@ For a guided walkthrough, see [TUTORIAL.md](TUTORIAL.md).
 
 For agent-facing operating instructions, see
 [`agent-skills/registry-forge-operator/SKILL.md`](agent-skills/registry-forge-operator/SKILL.md).
+
+## Current Status
+
+0.1.0 is a local-first MVP. It supports file-based CSV and `.xlsx` sources,
+strict `forge.recipe.yaml` validation, deterministic semantic alignment
+suggestions from a local profile bundle, Crosswalk mapping previews, readiness
+validation, and portable package export.
+
+The tool is intended for demos on synthetic or non-real data and for proving the
+operator workflow before a UI or hosted service exists.
 
 ## What It Does
 
@@ -48,6 +61,32 @@ All demo data is synthetic.
   header, uneven rows, missing values, duplicate IDs, and sensitive names.
 
 Generated `reports/`, `patches/`, and `previews/` directories are not committed.
+
+## Repository Map
+
+- [src/](src/): CLI and implementation.
+- [tests/](tests/): integration tests for command behavior and readiness gates.
+- [fixtures/](fixtures/): synthetic demo source data, recipes, mappings, and
+  profile bundles.
+- [TUTORIAL.md](TUTORIAL.md): guided demo walkthrough.
+- [agent-skills/](agent-skills/): repo-local Codex skill for operating Forge.
+- [IMPLEMENTATION_LOG.md](IMPLEMENTATION_LOG.md): implementation notes,
+  verification definition, and known pitfalls encountered during the MVP.
+
+## Local Setup
+
+Registry Forge currently depends on Crosswalk as a sibling checkout, matching
+the local workspace layout used by the Registry Stack repositories:
+
+```sh
+cd /path/to/apps
+git clone git@github.com:PublicSchema/crosswalk.git cel-mapping
+cd registry-forge
+cargo build --workspace
+```
+
+In this workspace, `../cel-mapping` already provides
+`crates/crosswalk-core`.
 
 ## Happy Path
 
@@ -97,3 +136,13 @@ compile failures, and redaction/package leak checks.
   remains.
 - The implementation is a single crate for the MVP. Split into core, ingest,
   profile, transform, export, and CLI crates when the surface grows.
+
+## Security
+
+Do not use real personal data with this MVP unless a project-specific data
+handling policy explicitly permits it. Report suspected vulnerabilities through
+GitHub private vulnerability reporting. See [SECURITY.md](SECURITY.md).
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).
