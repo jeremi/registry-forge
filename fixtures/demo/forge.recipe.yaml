@@ -97,7 +97,7 @@ candidates:
     status: draft
   manifest:
     status: draft
-  witness:
+  notary:
     status: draft
 review:
   status: draft

@@ -45,7 +45,7 @@ candidates:
     status: draft
   manifest:
     status: draft
-  witness:
+  notary:
     status: draft
 review:
   status: draft
@@ -328,7 +328,7 @@ candidates:
     status: draft
   manifest:
     status: draft
-  witness:
+  notary:
     status: draft
 review:
   status: draft
@@ -336,7 +336,7 @@ review:
 
 Rules:
 
-- `relay`, `manifest`, and `witness` are required.
+- `relay`, `manifest`, and `notary` are required.
 - Candidate artifacts exported by the MVP are draft placeholders.
 - Keep `review.status` honest. Do not mark review complete unless project
   governance has actually completed.
