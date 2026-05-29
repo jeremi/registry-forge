@@ -322,7 +322,7 @@ pub struct ValidationConfig {
 pub struct CandidateConfig {
     pub relay: StatusOnly,
     pub manifest: StatusOnly,
-    pub witness: StatusOnly,
+    pub notary: StatusOnly,
 }
 
 #[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
@@ -446,7 +446,7 @@ fn cmd_init(
             manifest: StatusOnly {
                 status: "draft".into(),
             },
-            witness: StatusOnly {
+            notary: StatusOnly {
                 status: "draft".into(),
             },
         },
@@ -1000,7 +1000,7 @@ fn cmd_export_package(recipe_path: &Path, out: &Path) -> Result<()> {
         "profile-bundles",
         "candidates/relay",
         "candidates/manifest",
-        "candidates/witness",
+        "candidates/notary",
     ] {
         fs::create_dir_all(out.join(dir)).map_err(|source| ForgeError::Io {
             path: out.join(dir),
@@ -1042,7 +1042,7 @@ fn cmd_export_package(recipe_path: &Path, out: &Path) -> Result<()> {
         &json!({"status": "draft"}),
     )?;
     write_json(
-        &out.join("candidates/witness/candidate.json"),
+        &out.join("candidates/notary/candidate.json"),
         &json!({"status": "draft"}),
     )?;
     let mut artifacts = BTreeMap::new();

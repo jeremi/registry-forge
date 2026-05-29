@@ -149,7 +149,7 @@ or pass explicit paths.
     - Run `cargo run -- export-package forge.recipe.yaml --out target/forge-package`.
     - Inspect `target/forge-package/package-manifest.json`.
     - Confirm raw source files are absent from the package.
-    - Candidate Relay, Manifest, and Witness outputs are draft artifacts.
+    - Candidate Relay, Manifest, and Notary outputs are draft artifacts.
 
 12. Replay package.
     - Run `cargo run -- check-recipe target/forge-package/forge.recipe.yaml`.
