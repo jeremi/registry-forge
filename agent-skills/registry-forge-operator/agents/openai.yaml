@@ -1,7 +1,0 @@
-interface:
-  display_name: "Registry Forge Operator"
-  short_description: "Prepare and verify Registry Forge packages"
-  default_prompt: "Use $registry-forge-operator to prepare, validate, export, and replay a Registry Forge package from my tabular registry source."
-
-policy:
-  allow_implicit_invocation: true

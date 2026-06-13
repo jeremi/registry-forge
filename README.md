@@ -12,8 +12,8 @@ reports, applying JSON Patch recipe changes, and editing Crosswalk mappings.
 
 For a guided walkthrough, see [TUTORIAL.md](TUTORIAL.md).
 
-For agent-facing operating instructions, see
-[`agent-skills/registry-forge-operator/SKILL.md`](agent-skills/registry-forge-operator/SKILL.md).
+For agent-facing operating instructions, use the `registry-forge-operator`
+skill from the `registry-skills` plugin repository.
 
 ## Current Status
 
@@ -69,7 +69,8 @@ Generated `reports/`, `patches/`, and `previews/` directories are not committed.
 - [fixtures/](fixtures/): synthetic demo source data, recipes, mappings, and
   profile bundles.
 - [TUTORIAL.md](TUTORIAL.md): guided demo walkthrough.
-- [agent-skills/](agent-skills/): repo-local Codex skill for operating Forge.
+- [agent-skills/](agent-skills/): pointer to the `registry-skills` plugin that
+  owns the Codex skill for operating Forge.
 - [IMPLEMENTATION_LOG.md](IMPLEMENTATION_LOG.md): implementation notes,
   verification definition, and known pitfalls encountered during the MVP.
 
