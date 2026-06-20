@@ -39,6 +39,19 @@ operator workflow before a UI or hosted service exists.
 - Validates readiness and blocks false-ready states.
 - Exports a portable package without raw source files.
 
+## Runtime Config Boundary
+
+Forge prepares data mapping packages and candidate artifacts for review. It
+does not own Registry Relay, Registry Notary, or registryctl runtime
+configuration semantics, product doctor rules, credentials, deployment profiles,
+governed apply behavior, or live config changes.
+
+Files under exported `candidates/` directories are review inputs for downstream
+authoring flows. They are not deployable runtime configs by themselves. Use
+registryctl or the owning product repository to generate runtime config, run
+product doctor validation, produce `registry.config.diagnostic_report.v1`
+reports, and apply governed config changes.
+
 ## Supported Inputs
 
 - CSV files.
