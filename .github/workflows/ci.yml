@@ -34,6 +34,10 @@ jobs:
         working-directory: registry-forge
         run: cargo fmt --all -- --check
 
+      - name: Config vocabulary guard
+        working-directory: registry-forge
+        run: scripts/check-stale-config-vocabulary.sh
+
       - name: Lint
         working-directory: registry-forge
         run: cargo clippy --workspace --all-targets -- -D warnings
