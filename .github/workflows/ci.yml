@@ -16,7 +16,7 @@ jobs:
       CARGO_NET_GIT_FETCH_WITH_CLI: true
     steps:
       - name: Checkout Registry Forge
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: registry-forge
 
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install Gitleaks
         run: |
